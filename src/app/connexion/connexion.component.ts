@@ -21,14 +21,15 @@ export class ConnexionComponent implements OnInit {
     console.log('tac');
     console.log(this.route.snapshot.queryParamMap.get('code'));
     var code = this.route.snapshot.queryParamMap.get('code');
+    const client_id = 'xn3g12yzv87p0ohpnfsi6o1rh638dm';
+    sessionStorage.setItem('user', '');
     var token = '';
     const body = new HttpParams()
-    .set('client_id', 'xn3g12yzv87p0ohpnfsi6o1rh638dm')
+    .set('client_id', client_id)
     .set('client_secret', 'j7pnk23rmd6o630xkhh6ompbkig5n6')
     .set('code', code)
     .set('grant_type', 'authorization_code')
     .set('redirect_uri', 'http://localhost:4200/twitch/login');
-    let params = new HttpParams().set('client_id', 'xn3g12yzv87p0ohpnfsi6o1rh638dm');
     const req = this._httpClient.post('https://id.twitch.tv/oauth2/token?client_id=uo6dggojyb8d6soh92zknwmi5ej1q2', 
     body.toString(),
     {
@@ -36,23 +37,30 @@ export class ConnexionComponent implements OnInit {
         .set('Content-Type', 'application/x-www-form-urlencoded')
     }).subscribe(
         res => {
-          const reqUsername = this._httpClient.get('https://api.twitch.tv/kraken?scope=user:read:email', {headers : new HttpHeaders()
-          .set('Content-Type', 'application/vnd.twitchtv.v5+json')
+          const reqUsername = this._httpClient.get('https://api.twitch.tv/kraken?scope=user:read:email',
+          {headers : new HttpHeaders()
           .set('Accept', 'application/vnd.twitchtv.v5+json')
-          .set('Authorization', 'Bearer ' + res.access_token)},
+          .set('Client-ID', client_id)
+          .set('Authorization', 'OAuth ' + res.access_token)
+        },
           )
           .subscribe(
-              res => {
-                console.log(res);
+              res_1 => {
+                console.log(res_1);
+                console.log(res_1.token.user_name);
+                sessionStorage.setItem('user', res_1.token.user_name); 
+                sessionStorage.setItem('id', res_1.token.user_id);
               },
-              err => {
-                  console.log(err);
+              err_1 => {
+                  console.log(err_1);
               }
             );
         
         },
         err => {
+          console.log(body.toString());
             console.log(err);
+
         }
       );
         

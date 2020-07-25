@@ -22,6 +22,9 @@
       <li class="nav-item">
         <a class="nav-link waves-light" routerLink="classement" routerLinkActive="active" mdbWavesEffect>Classement</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" routerLink="presentation" routerLinkActive="active" mdbWavesEffect>Présentation</a>
+      </li>
 
       <!-- Dropdown -->
     <!--   <li class="nav-item dropdown" dropdown>
@@ -39,20 +42,54 @@
     </ul>
     <!-- Links -->
 
+   
+
+            <div *ngIf="!hide">
+              <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item">
+                  <!-- <a class="nav-link" href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=xn3g12yzv87p0ohpnfsi6o1rh638dm&redirect_uri=http://localhost:4200/&scope=user_read"> -->
+                    <a class="nav-link waves-light" href="https://id.twitch.tv/oauth2/authorize?client_id=xn3g12yzv87p0ohpnfsi6o1rh638dm&redirect_uri=http://localhost:4200/twitch/login&response_type=code&scope=user%3Aread%3Aemail&state=85e19155860186db1bca9f1b9232ee9f">
+              
+              <mdb-icon fab  icon="twitch"></mdb-icon> Se connecter
+            </a>
+          </li>
+        <!--   <li class="nav-item">
+            <a class="nav-link">
+              <mdb-icon fab icon="google-plus"></mdb-icon>
+            </a>
+          </li> -->
+         
+        </ul>
+            
+            </div>
+            
+            
+<div *ngIf="hide"> 
+  
     <ul class="navbar-nav ml-auto nav-flex-icons">
       <li class="nav-item">
         <!-- <a class="nav-link" href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=xn3g12yzv87p0ohpnfsi6o1rh638dm&redirect_uri=http://localhost:4200/&scope=user_read"> -->
-        	<a class="nav-link" href="http://expedigame.com/twitch_connect.php">
-          <mdb-icon fab size="2x" icon="twitch"></mdb-icon>
-        </a>
-      </li>
-    <!--   <li class="nav-item">
-        <a class="nav-link">
-          <mdb-icon fab icon="google-plus"></mdb-icon>
-        </a>
-      </li> -->
-     
-    </ul>
+          <a class="nav-link waves-light" routerLink="profil">
+            <mdb-icon fas icon="user"></mdb-icon>
+            {{item}}
+              </a>
+            </li>
+            <li class="nav-item">
+          <a class="nav-link waves-light" (click)="logout()">
+            <mdb-icon fas icon="sign-out-alt"></mdb-icon>
+
+              </a>
+            </li>
+          <!--   <li class="nav-item">
+              <a class="nav-link">
+                <mdb-icon fab icon="google-plus"></mdb-icon>
+              </a>
+            </li> -->
+           
+          </ul>
+  </div>
+
+
   </links>
   <!-- Collapsible content -->
 

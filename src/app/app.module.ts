@@ -19,6 +19,8 @@ import { HomeComponent } from './home/home.component';
 import { ClassementComponent } from './classement/classement.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TwitchComponent } from './twitch/twitch.component';
+import { AuthComponent } from './auth/auth.component';
+import { PresentationComponent } from './presentation/presentation.component';
 
 
 
@@ -36,7 +38,9 @@ import { TwitchComponent } from './twitch/twitch.component';
     FooterComponent,
     HomeComponent,
     ClassementComponent,
-    TwitchComponent
+    TwitchComponent,
+    AuthComponent,
+    PresentationComponent
   ],
   imports: [
     BrowserModule,
