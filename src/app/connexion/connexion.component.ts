@@ -41,15 +41,15 @@ export class ConnexionComponent implements OnInit {
           {headers : new HttpHeaders()
           .set('Accept', 'application/vnd.twitchtv.v5+json')
           .set('Client-ID', client_id)
-          .set('Authorization', 'OAuth ' + res.access_token)
+          // .set('Authorization', 'OAuth ' + res.access_token)
         },
           )
           .subscribe(
               res_1 => {
                 console.log(res_1);
-                console.log(res_1.token.user_name);
-                sessionStorage.setItem('user', res_1.token.user_name); 
-                sessionStorage.setItem('id', res_1.token.user_id);
+                // console.log(res_1.token.user_name);
+                // sessionStorage.setItem('user', res_1.token.user_name); 
+                // sessionStorage.setItem('id', res_1.token.user_id);
               },
               err_1 => {
                   console.log(err_1);

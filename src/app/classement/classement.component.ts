@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵCompiler_compileModuleSync__POST_R3__ } from '@angular/core';
+import { ClassementService } from './../shared/classement.service';
+import { getLocaleDateTimeFormat, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-classement',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassementComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service : ClassementService) { }
 
   ngOnInit(): void {
+    this.service.refreshList();
   }
 
 }

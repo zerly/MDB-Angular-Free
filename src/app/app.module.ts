@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TwitchComponent } from './twitch/twitch.component';
 import { AuthComponent } from './auth/auth.component';
 import { PresentationComponent } from './presentation/presentation.component';
+import { ClassementService } from './shared/classement.service';
 
 
 
@@ -50,7 +51,7 @@ import { PresentationComponent } from './presentation/presentation.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ClassementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
