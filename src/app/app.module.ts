@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TwitchComponent } from './twitch/twitch.component';
 import { AuthComponent } from './auth/auth.component';
 import { PresentationComponent } from './presentation/presentation.component';
+import { SuccessComponent } from './success/success.component';
 
 
 
@@ -40,7 +41,8 @@ import { PresentationComponent } from './presentation/presentation.component';
     ClassementComponent,
     TwitchComponent,
     AuthComponent,
-    PresentationComponent
+    PresentationComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
