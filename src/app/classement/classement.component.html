@@ -1,1 +1,30 @@
+<head>
+    <style>
+        table{
+            background-color: white;
+        }
+    </style>
+</head>
+
+<section class="team-section text-center my-5">
+
+    <app-separateur></app-separateur>
+    <h2 class="h1-responsive font-weight-bold my-5 white-text">Le classement du mois</h2>
+    <div class="container">
+    <table mdbTable striped="true">
+        <thead  class="black white-text">
+            <tr>
+                <th>Pseudo</th>
+                <th>Points</th> 
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let ct of service.list">
+            <td>{{ct.Pseudo}}</td>
+            <td>{{ct.Point}}</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+ </section>
 
