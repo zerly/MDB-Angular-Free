@@ -22,6 +22,8 @@ import { TwitchComponent } from './twitch/twitch.component';
 import { AuthComponent } from './auth/auth.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { ClassementService } from './shared/classement.service';
+import { SuccessComponent } from './success/success.component';
+
 
 
 
@@ -41,7 +43,8 @@ import { ClassementService } from './shared/classement.service';
     ClassementComponent,
     TwitchComponent,
     AuthComponent,
-    PresentationComponent
+    PresentationComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
